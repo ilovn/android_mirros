@@ -1,0 +1,3 @@
+10   1   *   *   * /script/sdk.py > /var/logs/sdk.log
+10   2   *   *   * /script/android.py > /var/logs/android.log
+10   4   *   *   * /script/ndk.py > /var/logs/ndk.log
