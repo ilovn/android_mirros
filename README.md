@@ -8,13 +8,6 @@
 
 `mirrors.misscat.xyz` 端口:`80`
 
-####下载SDK
-
-访问下载最新的Windows SDK：
-
-[点击下载](http://mirrors.misscat.xyz/android/android-sdk_r24.4.1-windows.zip)
-
-解压后，运行`SDK Manager.exe`即可打开SDK管理器。
 
 ####配置更新
 
@@ -52,9 +45,9 @@
 
 | 版本        	| 平台  	  |  下载 	 | 大小	 | SHA-1校验码	 |
 | :----:   	| :----:  | :----:  | :----: | :----: |
-| 24.4.1       | Windows |[下载](http://mirrors.misscat.xyz/android/repository/android-sdk_r24.4.1-windows.zip)| 199701062 | 64882FB967F960F2142DE239200104CDC9B4C75B |
+| 24.4.1       | Windows |[下载](http://mirrors.misscat.xyz/android/android-sdk_r24.4.1-windows.zip)| 199701062 | 64882FB967F960F2142DE239200104CDC9B4C75B |
 | 24.4.1       | Linux |[下载](http://mirrors.misscat.xyz/android/android-sdk_r24.4.1-linux.tgz)| 326412652 | 725BB360F0F7D04EACCFF5A2D57ABDD49061326D |
-| 24.4.1       | Mac |[下载](http://mirrors.misscat.xyz/android/repository/android-sdk_r24.4.1-macosx.zip)| 102781947 | 85A9CCCB0B1F9E6F1F616335C5F07107553840CD |
+| 24.4.1       | Mac |[下载](http://mirrors.misscat.xyz/android/android-sdk_r24.4.1-macosx.zip)| 102781947 | 85A9CCCB0B1F9E6F1F616335C5F07107553840CD |
 
 <!--####Git
 
@@ -99,5 +92,3 @@
 | r10e       | Linux X86 |[下载](http://mirrors.misscat.xyz/android/ndk/android-ndk-r10e-linux-x86.bin)| 394281908 | B970D086D5C91C320C006EA14E58BD1A50E1FE52 |
 | r10e       | Linux X86_64 |[下载](http://mirrors.misscat.xyz/android/ndk/android-ndk-r10e-linux-x86_64.bin)| 401522849 | C685E5F106F8DAA9B5449D0A4F21EE8C0AFCB2F6 |
 | r10e       | Mac |[下载](http://mirrors.misscat.xyz/android/ndk/android-ndk-r10e-darwin-x86_64.bin)| 388937326 | B57C2B9213251180DCAB794352BFC9A241BF2557 |
-
-
