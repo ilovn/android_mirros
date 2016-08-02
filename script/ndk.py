@@ -89,5 +89,4 @@ for alinks in d.find('a'):
     #print alinks.text()
     if 'return onDownload(this)' == alinks.get('onclick') or 'return onDownload(this,false,true)' == alinks.get('onclick'):
         print alinks.attrib.get('href')
-        fetch(alinks.attrib.get('href').replace('https://dl.google.com/', '').replace('http://dl.google.com/', ''))
-
+        fetch(alinks.attrib.get('href').replace('https://dl.google.com/', '').replace('http://dl.google.com/', '').replace('?hl=zh-cn', ''))

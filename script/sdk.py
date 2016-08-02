@@ -11,7 +11,7 @@ from sgmllib import SGMLParser
 from pyquery import PyQuery as pq
 import urllib
 
-base_url = 'https://dl.google.com/'
+base_url = 'http://dl.google.com/'
 out_dir = '/data/mirrors'
 #out_dir = '/Users/cat'
 
