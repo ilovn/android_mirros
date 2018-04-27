@@ -79,7 +79,7 @@ def fetch(file):
 #    #fetch(file)
 #    print file
 
-content = urllib2.urlopen('http://tools.android.com/download/studio/canary/latest').read()
+content = urllib2.urlopen('https://developer.android.com/studio/preview/').read()
 #print content
 d = pq(content)
 #print d
@@ -90,4 +90,4 @@ for alinks in d.find('a'):
     # if 'return onDownload(this)' == alinks.get('onclick') or 'return onDownload(this,false,true)' == alinks.get('onclick'):
     if str(alinks.get("href")).startswith('https://dl.google.com/dl/'):
         #print alinks.attrib.get('href')
-        fetch(alinks.attrib.get('href').replace('https://dl.google.com/', '').replace('http://dl.google.com/', '').replace('//dl.google.com/', '').replace('?hl=zh-cn', ''))
+        fetch(alinks.attrib.get('href').replace('https://dl.google.com/', '').replace('http://dl.google.com/', ''))

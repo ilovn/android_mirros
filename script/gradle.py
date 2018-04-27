@@ -11,9 +11,9 @@ from sgmllib import SGMLParser
 from pyquery import PyQuery as pq
 import urllib
 
-base_url = 'https://dl.google.com/'
+base_url = 'https://downloads.gradle.org'
 out_dir = '/data/mirrors'
-#out_dir = '/Users/cat'
+# out_dir = '/Users/cat'
 
 def download(filename, last_modified):
 # print "downlaod:" + filename
@@ -33,6 +33,7 @@ def process(filename, size=-1):
    print 'Processing: ' + filename
    handle = urlopen(base_url + filename)
    headers = handle.info()
+   # print headers
    content_length = int(headers.getheader('Content-Length'))
    last_modified = mktime(strptime(headers.getheader('Last-Modified'), '%a, %d %b %Y %H:%M:%S %Z'))
 
@@ -59,9 +60,11 @@ def fetch(file):
       dir = file[len(base_url) - 1:rfind(file, '/') + 1]
       file = file[rfind(file, '/') + 1:]
    elif 'http' in file:
+      print 'return'
       return
    else:
       dir = '/'
+   # print file
    process(dir + file)
    base_dir = path.dirname(dir + file)
    if base_dir != '/':
@@ -75,18 +78,19 @@ def fetch(file):
    #             process(base_dir + element.text)
    #       else:
    #          fetch(element.text)
-#for file in ['repository-10.xml', 'repository-11.xml', 'addons_list-2.xml']:
-   #fetch(file)
-#   print file
+# for file in ['repository-10.xml', 'repository-11.xml', 'addons_list-2.xml']:
+#    #fetch(file)
+#    print file
 
-content = urllib2.urlopen('http://developer.android.com/intl/zh-cn/ndk/downloads/index.html').read()
+content = urllib2.urlopen('https://gradle.org/releases/').read()
 #print content
 d = pq(content)
 #print d
 #print d.find('a')
 #print d('#win-tools').attr('href')
 for alinks in d.find('a'):
-    #print alinks.text()
-    if 'return onDownload(this)' == alinks.get('onclick') or 'return onDownload(this,false,true)' == alinks.get('onclick'):
-        print alinks.attrib.get('href')
-        fetch(alinks.attrib.get('href').replace('https://dl.google.com/', '').replace('http://dl.google.com/', '').replace('?hl=zh-cn', ''))
+    # print alinks.get("href")
+    # if 'return onDownload(this)' == alinks.get('onclick') or 'return onDownload(this,false,true)' == alinks.get('onclick'):
+    if str(alinks.get("href")).startswith('https://services.gradle.org/distributions/') and str(alinks.get("href")).endswith('all.zip'):
+        # print alinks.attrib.get('href')
+        fetch(alinks.attrib.get('href').replace('https://services.gradle.org/', ''))
